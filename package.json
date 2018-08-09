@@ -7,7 +7,7 @@
     "rimraf": "^2.6.1"
   },
   "scripts": {
-    "install": "cd cpp/modbus && node-gyp configure && node-gyp build",
+    "install": "",
     "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix",
     "build-autoprefix": "postcss --use autoprefixer --map false --output public/css/bulma.css public/css/bulma.css",
     "build-clean": "rimraf css",
