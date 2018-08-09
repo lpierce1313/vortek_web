@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <% include partials/head %>
+   </head>
+   <main>
+      <section class="hero is-primary is-medium">
+         <div class="hero-head">
+            <nav class="navbar">
+               <div class="container">
+                  <div class="navbar-brand">
+                     <a class="navbar-item" href="/">
+                     Vortek Instruments
+                     </a>
+                     <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     </span>
+                  </div>
+                  <div id="navbarMenuHeroA" class="navbar-menu">
+                     <div class="navbar-end">
+                        <a class="navbar-item is-active" href="/modbus">
+                        Modbus
+                        </a>
+                        <a class="navbar-item" href="/control_panel">
+                          Control Panel
+                        </a>
+                        <a class="navbar-item" href="/directory">
+                        Directory
+                        </a>
+                        <a class="navbar-item" href="/help">
+                        Help
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </div>
+      </section>
+      <br> <br> <br>
+      <div class="container">
+         <div class="card">
+            <div class="card-content">
+              <!-- Mobile Friendly -->
+              <div class="is-hidden-tablet has-text-centered">
+                 <br>
+                 <div class="dropdown is-hoverable" style="display:inline-block;">
+                    <div class="dropdown-trigger">
+                       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+                       <span>Function Code Selection</span>
+                       <span class="icon is-small">
+                       <i class="fas fa-angle-down greenIcon" aria-hidden="true"></i>
+                       </span>
+                       </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                       <div class="dropdown-content">
+                          <div class="dropdown-item">
+                             <a href="/modbus"> Read Holding Registers</a>
+                          </div>
+                          <hr class="dropdown-divider">
+                          <div class="dropdown-item">
+                             <a href="/modbusfc02"> Read Input Status</a>
+                          </div>
+                          <hr class="dropdown-divider">
+                          <div class="dropdown-item">
+                             <a href="/modbusfc04"> Read Input Registers</a>
+                          </div>
+                          <hr class="dropdown-divider">
+                          <div class="dropdown-item">
+                             <a href="modbusfc05"> Write Coil</a>
+                          </div>
+                          <hr class="dropdown-divider">
+                          <div class="dropdown-item">
+                             <a href="modbusfc06"> Write Register</a>
+                          </div>
+                          <hr class="dropdown-divider">
+                          <div class="dropdown-item">
+                             <a href="modbusfc16"> Write Multiple Registers</a>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <br>
+              </div>
+
+              <!-- If not mobile -->
+              <div class="is-hidden-mobile">
+                 <div class="dropdown is-hoverable" style="display:inline-block;">
+                    <div class="dropdown-trigger">
+                       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+                       <span>Function Code Selection</span>
+                       <span class="icon is-small">
+                       <i class="fas fa-angle-down greenIcon" aria-hidden="true"></i>
+                       </span>
+                       </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                       <div class="dropdown-content">
+                          <div class="dropdown-item">
+                             <a href="/modbus"> Read Holding Registers</a>
+                          </div>
+                          <hr class="dropdown-divider">
+                          <div class="dropdown-item">
+                             <a href="/modbusfc02"> Read Input Status</a>
+                          </div>
+                          <hr class="dropdown-divider">
+                          <div class="dropdown-item">
+                             <a href="/modbusfc04"> Read Input Registers</a>
+                          </div>
+                          <hr class="dropdown-divider">
+                          <div class="dropdown-item">
+                             <a href="modbusfc05"> Write Coil</a>
+                          </div>
+                          <hr class="dropdown-divider">
+                          <div class="dropdown-item">
+                             <a href="modbusfc06"> Write Register</a>
+                          </div>
+                          <hr class="dropdown-divider">
+                          <div class="dropdown-item">
+                             <a href="modbusfc16"> Write Multiple Registers</a>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+               <br>
+               <h1 class="title has-text-centered headerText"> Modbus</h1>
+               <h1 class="subtitle has-text-centered headerText" style="padding-top:7px;"> FC05</h1>
+               <br>
+               <form class="control" method="POST" action="/modbusfc05">
+                  <div class="columns">
+                     <div class="column">
+                        <div class="field">
+                           <label class="label">Com Port</label>
+                           <div class="control">
+                              <input class="input" placeholder="Enter Com Port" id="comPort" type="number" name="comPort" required>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="column">
+                        <div class="field">
+                           <label class="label">Baud Rate</label>
+                           <div class="control">
+                              <div class="select is-fullwidth">
+                                 <select id="list" name="speed">
+                                    <option value="4800">4800 </option>
+                                    <option value="9600" selected>9600 </option>
+                                    <option value="14400">14400</option>
+                                    <option value="19200">19200  </option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="column">
+                        <div class="field">
+                           <label class="label">Parity</label>
+                           <div class="control">
+                              <div class="select is-fullwidth">
+                                 <select id="parity" name="parity">
+                                    <option value="none">None</option>
+                                    <option value="odd" selected>Odd</option>
+                                    <option value="even">Even</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="columns">
+                     <div class="column">
+                        <div class="field">
+                           <label class="label">Start Coil</label>
+                           <div class="control">
+                              <input class="input" placeholder="Enter Starting Coil between 0-15" id="startReg" type="number" name="startReg" required>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="column">
+                        <div class="field">
+                           <label class="label">Unit Address</label>
+                           <div class="control">
+                              <input class="input" placeholder="Enter Unit Address" id="unitAdd" type="number" name="unitAdd" required>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <br> <!-- Changes based on code  -->
+
+
+
+                  <div class="columns">
+                     <div class="column is-one-third">
+                        <div class="field">
+                           <label class="label">Function Code</label>
+                           <div class="control">
+                              <div class="select is-fullwidth">
+                                 <select id="code" name="code">
+                                    <option value="5" selected>FC05</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="column is-one-third">
+                        <div class="field">
+                           <label class="label">Boolean State</label>
+                           <div class="control">
+                              <div class="select is-fullwidth">
+                                 <select id="state" name="state">
+                                    <option value="1" selected>True</option>
+                                    <option value="0">False</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <input class="button is-primary is-outlined" type="submit" value="Submit and Continue">
+                  <br> <br> <br>
+               </form>
+               </section>
+            </div>
+         </div>
+      </div>
+      <br> <br> <br>
+   </main>
+   <footer class="footerColor">
+      <br>
+      <% include partials/footer %>
+      <br>
+   </footer>
+</html>

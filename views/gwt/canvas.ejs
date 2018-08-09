@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+  <html>
+
+    <head>
+      <% include partials/head %>
+    </head>
+
+    <main>
+      <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+      <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+      <noscript>
+        <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+          Your web browser must have JavaScript enabled
+          in order for this application to display correctly.
+        </div>
+      </noscript>
+      <section class="hero is-primary is-medium">
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                  Vortek Instruments
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                  <span></span>
+                <span></span>
+                <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item" href="/modbus">
+                    Modbus
+                  </a>
+                  <a class="navbar-item is-active" href="/control_panel">
+                    Control Panel
+                  </a>
+                  <a class="navbar-item" href="/directory">
+                    Directory
+                  </a>
+                  <a class="navbar-item " href="/help">
+                    Help
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </section>
+      <section class="">
+          <br> <br>
+        <h1 class="title has-text-centered headerText"> Flow Meter Menu </h1> <br>
+        <div class="has-text-centered is-hidden-mobile">
+            <!-- <canvas id="myCanvas" width="580" height="580"> -->
+            <canvas id="myCanvas" width="580" height="580">
+            Your browser does not support the canvas element.
+            </canvas>
+        </div>
+        <div class="has-text-centered is-hidden-tablet">
+            <!-- <canvas id="myCanvas" width="580" height="580"> -->
+            <canvas id="canvasMobile" width="300" height="300">
+            Your browser does not support the canvas element.
+            </canvas>
+        </div>
+        <script type="text/javascript" language="javascript" src="js/control.js"> </script> <!-- Control Panel code -->
+        <br> <br> <br>
+      </section>
+    </main>
+    <footer class="footerColor">
+      <br>
+      <% include partials/footer %>
+      <br>
+    </footer>
+  </html>

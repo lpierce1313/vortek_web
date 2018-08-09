@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <% include partials/head %>
+   </head>
+   <main>
+      <section class="hero is-primary is-medium">
+         <div class="hero-head">
+            <nav class="navbar">
+               <div class="container">
+                  <div class="navbar-brand">
+                     <a class="navbar-item" href="/">
+                     Vortek Instruments
+                     </a>
+                     <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                     </span>
+                  </div>
+                  <div id="navbarMenuHeroA" class="navbar-menu">
+                     <div class="navbar-end">
+                        <a class="navbar-item" href="/modbus">
+                        Modbus
+                        </a>
+                        <a class="navbar-item" href="/control_panel">
+                          Control Panel
+                        </a>
+                        <a class="navbar-item" href="/directory">
+                        Directory
+                        </a>
+                        <a class="navbar-item" href="/help">
+                        Help
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </div>
+      </section>
+      <br> <br> <br>
+      <div class="container">
+         <div class="card">
+            <div class="card-content">
+               <h1 class="title has-text-centered headerText"> Modbus in C++ </h1>
+               <br>
+               <form class="control" method="POST" action="/modbus_c">
+                  <div class="columns">
+                     <div class="column is-one-third">
+                        <div class="field">
+                           <label class="label">Com Port</label>
+                           <div class="control">
+                              <input class="input" placeholder="Enter Com Port" id="comPort" type="text" name="comPort" required>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="column is-one-third">
+                        <div class="field">
+                           <label class="label">Baud Rate</label>
+                           <div class="control">
+                              <div class="select is-fullwidth">
+                                 <select id="list" name="speed">
+                                    <option value="4800">4800</option>
+                                    <option value="9600" selected>9600</option>
+                                    <option value="14400">14400</option>
+                                    <option value="19200">19200</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="column is-one-third">
+                        <div class="field">
+                           <label class="label">Parity</label>
+                           <div class="control">
+                              <div class="select is-fullwidth">
+                                 <select id="parity" name="parity">
+                                    <option value="0">None</option>
+                                    <option value="1" selected>Odd</option>
+                                    <option value="2">Even</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="columns">
+                     <div class="column is-half">
+                        <div class="field">
+                           <label class="label">Start Register</label>
+                           <div class="control">
+                              <input class="input" placeholder="Enter Starting Address" id="startReg" type="text" name="startReg" required>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="column is-half">
+                        <div class="field">
+                           <label class="label">Unit Address</label>
+                           <div class="control">
+                              <input class="input" placeholder="Enter Unit Address" id="unitAdd"type="text" name="unitAdd" required>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <div class="columns">
+                     <div class="column is-one-third">
+                        <div class="field">
+                           <label class="label">Function Code</label>
+                           <div class="control">
+                              <div class="select is-fullwidth">
+                                 <select id="code" name="code">
+                                    <option value="3" selected>FC03</option>
+                                    <option value="1">FC01</option>
+                                    <option value="2">FC02</option>
+                                    <option value="4">FC04</option>
+                                    <option value="5">FC05</option>
+                                    <option value="6">FC06</option>
+                                    <option value="7">FC07</option>
+                                    <option value="16">FC16</option>
+                                    <option value="17">FC17</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="column is-one-third">
+                        <div class="field">
+                           <label class="label">Number of Register</label>
+                           <div class="control">
+                              <input class="input" placeholder="Enter Number of Registers" id="numReg" type="text" min="1" max="10" name="numReg" required>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="column is-one-third">
+                        <div class="field">
+                           <label class="label">Data Type</label>
+                           <div class="control">
+                              <div class="select is-fullwidth">
+                                 <select id="format" name="format">
+                                    <option value="i" selected>Integer</option>
+                                    <option value="f">Float</option>
+                                    <option value="h">Hex</option>
+                                    <option value="b">Byte</option>
+                                    <option value="a">Ascii</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="columns">
+                     <div class="column is-one-third">
+                        <div class="field">
+                           <label class="label">Number of Bits</label>
+                           <div class="control">
+                              <div class="select is-fullwidth">
+                                 <select id="bit" name="bit">
+                                    <option value="16" selected>16 bit</option>
+                                    <option value="32">32 bit</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="column is-one-third">
+                        <div class="field">
+                           <label class="label">Signed/Unsigned</label>
+                           <div class="control">
+                              <div class="select is-fullwidth">
+                                 <select id="signed" name="sign">
+                                    <option value="u">Unsigned</option>
+                                    <option value="s" selected>Signed</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <br>
+                  <input class="button is-primary is-outlined" type="submit" value="Submit and Continue">
+                  <br> <br> <br>
+               </form>
+               </section>
+            </div>
+         </div>
+      </div>
+      <br> <br> <br>
+   </main>
+   <footer class="footerColor">
+      <br>
+      <% include partials/footer %>
+      <br>
+   </footer>
+</html>

@@ -1,0 +1,176 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Vortek</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+  <!-- Bulma Version 0.7.1-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/hero.css">
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/bulma.css">
+  <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
+</head>
+<main>
+  <section class="hero is-primary is-medium is-bold">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                Vortek Instruments
+              </a>
+            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item" href="/modbus">
+                  Modbus
+              </a>
+              <a class="navbar-item" href="/control_panel">
+                Control Panel
+              </a>
+              <a class="navbar-item" href="/directory">
+                  Directory
+                </a>
+              <a class="navbar-item" href="/help">
+                  Help
+                </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">
+                        Welcome to Vortek Modbus RTU
+                        </h1>
+        <h2 class="subtitle">
+                        This application was built with NodeJS using the Modbus RTU library.
+                        </h2>
+      </div>
+    </div>
+
+  </section>
+  <div class="box cta">
+    <p class="has-text-centered">
+      <span class="tag is-primary">New</span> The Modbus Web Program will Read/Write registers to and from the ProV Simulator via NodeJS.
+    </p>
+  </div>
+  <section class="container">
+    <div class="intro column is-8 is-offset-2"> <br>
+      <h2 class="headerSmall title">How to use the program</h2><br>
+      <p class="subtitle">This program will require some inputs while other inputs will be optional and have default values. More instructions will be on the about page.</p>
+    </div>
+    <div id="small">
+      <div class="columns features">
+        <div class="column is-4">
+          <div class="card is-shady smallCard">
+            <div class="card-image has-text-centered">
+              <i class="fa fa-tv"></i>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4>Execute Modbus. </h4>
+                <p>By navigating to modbus, the user will be able to enter modbus values inorder to read and write from the registers. </p>
+                <a class = "button is-small is-primary is-outlined" href="/modbus">Goto Modbus </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="card is-shady smallCard">
+            <div class="card-image has-text-centered">
+              <i class="fa fa-list-alt"></i>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4>Go to the register directory.</h4>
+                <p>The modbus directory will display information about each register label, address, type, and recommended format. </p>
+                <a class = "button is-small is-primary is-outlined" href="/directory">Read Directory </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="card is-shady smallCard">
+            <div class="card-image has-text-centered">
+              <i class="fa fa-question"></i>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4> Read through the help page. </h4>
+                <p>The help page can be used to determine how the application works and how to read and write to different registers </p>
+                <a class = "button is-small is-primary is-outlined" href="/help">Get Help</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="large">
+      <div class="columns features">
+        <div class="column is-4">
+          <div class="card is-shady largeCard">
+            <div class="card-image has-text-centered">
+              <i class="fa fa-tv"></i>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4>Execute Modbus. </h4>
+                <p>By navigating to modbus, the user will be able to enter modbus values inorder to read and write from the registers. </p>
+                <a class = "button is-small is-primary is-outlined" href="/modbus">Goto Modbus </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="card is-shady largeCard">
+            <div class="card-image has-text-centered">
+              <i class="fa fa-list-alt"></i>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4>Go to the register directory.</h4>
+                <p>The modbus directory will display information about each register label, address, type, and recommended format. </p>
+                <a class = "button is-small is-primary is-outlined" href="/directory">Read Directory </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="card is-shady largeCard">
+            <div class="card-image has-text-centered">
+              <i class="fa fa-question"></i>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <h4> Read through the help page. </h4>
+                <p>The help page can be used to determine how the application works and how to read and write to different registers </p>
+                <a class = "button is-small is-primary is-outlined" href="/help">Get Help</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br> <br>
+</main>
+<footer class="footerColor">
+  <br>
+  <% include partials/footer %>
+  <br>
+</footer>
+<script src="/js/bulma.js"></script>  <!---Load Script to fix card shading and icons -->
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+  <html>
+     <head>
+        <% include partials/head %>
+     </head>
+     <main>
+       <script>
+         function select(){
+           var selectBox = document.getElementById("selectBox");
+           var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+           document.getElementById("FC03").style.display="none";
+           document.getElementById("FC02").style.display="none";
+           document.getElementById("FC04").style.display="none";
+           document.getElementById("FC05").style.display="none";
+           document.getElementById("FC06").style.display="none";
+           document.getElementById("FC16").style.display="none";
+           document.getElementById("control").style.display="none";
+           switch(selectedValue){
+             case "FC03":
+               document.getElementById("FC03").style.display="block";
+               break;
+             case "FC02":
+               document.getElementById("FC02").style.display="block";
+               break;
+             case "FC04":
+               document.getElementById("FC04").style.display="block";
+               break;
+             case "FC05":
+               document.getElementById("FC05").style.display="block";
+               break;
+             case "FC06":
+               document.getElementById("FC06").style.display="block";
+               break;
+             case "FC16":
+               document.getElementById("FC16").style.display="block";
+               break;
+             case "control":
+               document.getElementById("control").style.display="block";
+               break;
+           }
+         }
+
+         function select1(){
+           var selectBox = document.getElementById("selectBox1");
+           var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+           document.getElementById("FC03_").style.display="none";
+           document.getElementById("FC02_").style.display="none";
+           document.getElementById("FC04_").style.display="none";
+           document.getElementById("FC05_").style.display="none";
+           document.getElementById("FC06_").style.display="none";
+           document.getElementById("FC16_").style.display="none";
+           document.getElementById("control_").style.display="none";
+           switch(selectedValue){
+             case "FC03_":
+               document.getElementById("FC03_").style.display="block";
+               break;
+             case "FC02_":
+               document.getElementById("FC02_").style.display="block";
+               break;
+             case "FC04_":
+               document.getElementById("FC04_").style.display="block";
+               break;
+             case "FC05_":
+               document.getElementById("FC05_").style.display="block";
+               break;
+             case "FC06_":
+               document.getElementById("FC06_").style.display="block";
+               break;
+             case "FC16_":
+               document.getElementById("FC16_").style.display="block";
+               break;
+             case "control_":
+               document.getElementById("control_").style.display="block";
+               break;
+           }
+         }
+       </script>
+        <section class="hero is-primary is-medium">
+           <div class="hero-head">
+              <nav class="navbar">
+                 <div class="container">
+                    <div class="navbar-brand">
+                       <a class="navbar-item" href="/">
+                       Vortek Instruments
+                       </a>
+                       <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                       </span>
+                    </div>
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                       <div class="navbar-end">
+                          <a class="navbar-item" href="/modbus">
+                          Modbus
+                          </a>
+                          <a class="navbar-item" href="/control_panel">
+                            Control Panel
+                          </a>
+                          <a class="navbar-item" href="/directory">
+                          Directory
+                          </a>
+                          <a class="navbar-item is-active" href="/help">
+                          Help
+                          </a>
+                       </div>
+                    </div>
+                 </div>
+              </nav>
+           </div>
+        </section>
+        <br> <br> <br>
+        <div class="container">
+           <div class="card">
+              <div class="card-content" style="overflow:hidden;">
+                
+                    <!-- Mobile Friendly -->
+
+                    <div class="is-hidden-tablet has-text-centered">
+                       <br>
+                       <div class="field">
+                          <label class="label">Select Page</label>
+                          <div class="control">
+                             <div class="select">
+                                <select onchange="select1()" id="selectBox1">
+                                   <option value="FC03_" selected> Read Holding Registers </option>
+                                   <option value="FC02_" > Read Input Status </option>
+                                   <option value="FC04_" > Read Input Registers </option>
+                                   <option value="FC05_" > Write Coil </option>
+                                   <option value="FC06_" > Write Register </option>
+                                   <option value="FC16_" > Write Multiple Registers </option>
+                                   <option value="control_" > Control Panel </option>
+                                </select>
+                             </div>
+                          </div>
+                       </div>
+                       <br>
+                    </div>
+
+                    <!-- If not mobile -->
+                    <div class="is-hidden-mobile">
+                      <div class="field">
+                         <label class="label">Select Page</label>
+                         <div class="control">
+                            <div class="select">
+                               <select onchange="select()" id="selectBox">
+                                  <option value="FC03" selected> Read Holding Registers </option>
+                                  <option value="FC02" > Read Input Status </option>
+                                  <option value="FC04" > Read Input Registers </option>
+                                  <option value="FC05" > Write Coil </option>
+                                  <option value="FC06" > Write Register </option>
+                                  <option value="FC16" > Write Multiple Registers </option>
+                                  <option value="control" > Control Panel </option>
+                               </select>
+                            </div>
+                         </div>
+                      </div>
+                    </div>
+                    <h1 class="title has-text-centered headerText"> Help</h1>
+
+                    <div class="is-size-6 is-hidden-tablet">
+                      <div id="FC03_">
+                        <h1 class="has-text-centered"> <b>Read Holding Registers</b> </h1>
+                        <br>
+                        <div class="content">
+                          <ul>
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Once the required modbus inputs have been entered hit submit and continue or modify the optional inputs below.</li> <br>
+                            <li>Please note: The number of registers must be a multiple of two if the datatype is float or a 32 bit number. </li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="FC02_" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Read Input Status</b> </h1>
+                        <br>
+                        <div class="content">
+                          <ul>
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Once the required modbus inputs have been entered select a data type and enter the number of registers desired</li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="FC04_" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Read Input Registers</b> </h1>
+                        <br>
+                        <div class="content">
+                          <ul>
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Once the required modbus inputs have been entered hit submit and continue or modify the optional inputs below.</li> <br>
+                            <li>Please note: The number of registers must be a multiple of two if the datatype is float or a 32 bit number. </li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="FC05_" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Write Coil</b> </h1>
+                        <br>
+                        <div class="content">
+                          <ul>
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Start Register must be between 0 and 15 which is how the coils are setup</li> <br>
+                            <li>Once the required modbus inputs have been entered select a data type and select true or false for the coil</li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="FC06_" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Write Register</b> </h1>
+                        <br>
+                        <div class="content"
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Once the required modbus inputs have been entered select a data type and enter a register value to write to the corresponding address</li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="FC16_" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Write Multiple Registers</b> </h1>
+                        <br>
+                        <div class="content">
+                          <ul>
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Once the required modbus inputs have been entered select a data type and enter a register array to write to the corresponding addresses</li> <br>
+                            <li>Please note: When entering values for modbus array each value must be seperated with a space</li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="control_" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Control Panel Info</b> </h1>
+                        <br>
+                        <div class="content" >
+                          <ul>
+                            <li>Press "ENTER" to enter the main menu</li> <br>
+                            <li>Use Left and Right Arrows to look through the different menus</li> <br>
+                            <li>Once on the desired menu, use the Up and Down Arrows to scroll through the different options</li> <br>
+                            <li>To change the value of a variable/function, press enter and then use arrows keys</li> <br>
+                            <li>To reset program back to default, hit "EXIT"</li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <br> <br>
+
+                    </div>
+
+                    <div class="is-size-4 is-hidden-mobile">
+                      <div id="FC03">
+                        <h1 class="has-text-centered"> <b>Read Holding Registers</b> </h1>
+                        <br>
+                        <div class="content" style="padding-left:80px; padding-right:80px;">
+                          <ul>
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Once the required modbus inputs have been entered hit submit and continue or modify the optional inputs below.</li> <br>
+                            <li>Please note: The number of registers must be a multiple of two if the datatype is float or a 32 bit number. </li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="FC02" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Read Input Status</b> </h1>
+                        <br>
+                        <div class="content" style="padding-left:80px; padding-right:80px;">
+                          <ul>
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Once the required modbus inputs have been entered select a data type and enter the number of registers desired</li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="FC04" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Read Input Registers</b> </h1>
+                        <br>
+                        <div class="content" style="padding-left:80px; padding-right:80px;">
+                          <ul>
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Once the required modbus inputs have been entered hit submit and continue or modify the optional inputs below.</li> <br>
+                            <li>Please note: The number of registers must be a multiple of two if the datatype is float or a 32 bit number. </li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="FC05" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Write Coil</b> </h1>
+                        <br>
+                        <div class="content" style="padding-left:80px; padding-right:80px;">
+                          <ul>
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Start Register must be between 0 and 15 which is how the coils are setup</li> <br>
+                            <li>Once the required modbus inputs have been entered select a data type and select true or false for the coil</li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="FC06" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Write Register</b> </h1>
+                        <br>
+                        <div class="content" style="padding-left:80px; padding-right:80px;">
+                          <ul>
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Once the required modbus inputs have been entered select a data type and enter a register value to write to the corresponding address</li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="FC16" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Write Multiple Registers</b> </h1>
+                        <br>
+                        <div class="content" style="padding-left:80px; padding-right:80px;">
+                          <ul>
+                            <li>Enter all desired information according to the modbus simulation</li> <br>
+                            <li>Required inputs include: Start Register, Com Port, Unit Address, Parity, and Baud Rate</li> <br>
+                            <li>Once the required modbus inputs have been entered select a data type and enter a register array to write to the corresponding addresses</li> <br>
+                            <li>Please note: When entering values for modbus array each value must be seperated with a space</li> <br>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div id="control" style="display:none;">
+                        <h1 class="has-text-centered"> <b>Control Panel Info</b> </h1>
+                        <br>
+                        <div class="content" style="padding-left:80px; padding-right:80px; font-size:24px;">
+                          <ul>
+                            <li>Press "ENTER" to enter the main menu</li> <br>
+                            <li>Use Left and Right Arrows to look through the different menus</li> <br>
+                            <li>Once on the desired menu, use the Up and Down Arrows to scroll through the different options</li> <br>
+                            <li>To change the value of a variable/function, press enter and then use arrows keys</li> <br>
+                            <li>To reset program back to default, hit "EXIT"</li> <br>
+                          </ul>
+                        </div>
+                      </div>
+                      <br> <br> <br> <br> <br>
+                    </div>
+                 </section>
+              </div>
+           </div>
+        </div>
+        <br> <br> <br>
+     </main>
+     <footer class="footerColor">
+        <br>
+        <% include partials/footer %>
+        <br>
+     </footer>
+  </html>

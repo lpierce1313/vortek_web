@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+  <html>
+
+    <head>
+      <% include partials/head %>
+    </head>
+
+    <main>
+      <section class="hero is-primary is-medium">
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                  Vortek Instruments
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                  <span></span>
+                <span></span>
+                <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item" href="/modbus">
+                    Modbus
+                  </a>
+                  <a class="navbar-item" href="/control_panel">
+                    Control Panel
+                  </a>
+                  <a class="navbar-item" href="/directory">
+                    Directory
+                  </a>
+                  <a class="navbar-item" href="/help">
+                    Help
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </section>
+      <section class="container">
+          <br> <br>
+        <h1 class="title has-text-centered headerText"> Mod C Result </h1> <br>
+          <br>
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" width="100%">
+            <!-- No Error -->
+            <h1 class="has-text-centered modbusHeader"> Result </h1> <br>
+            <% if (!result.flag) { %>
+              <thead>
+                <tr class="is-size-5">
+                  <th width="20%">Label</th>
+                  <th width="20%">Address</th>
+                  <th width="20%">Recommended Type</th>
+                  <th width="20%">Read/Write</th>
+                  <th width="20%">Value</th>
+                </tr>
+              </thead>
+              <tbody class="list is-size-5">
+                <% result.arr.forEach(function(val) { %>
+                  <tr>
+                    <td> <%= val.regLabel %> </td>
+                    <td> <%= val.regAdd %> </td>
+                    <td> <%= val.recType %> </td>
+                    <td> <%= val.rw %> </td>
+                    <td> <%= val.value %> </td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            <% } else { %>
+              <thead>
+                <tr class="is-size-5">
+                  <th width="25%">Error Number</th>
+                  <th width="50%">Type of Error</th>
+                </tr>
+              </thead>
+              <tbody class="list is-size-5">
+
+                <tr>
+                  <td width="50%"> Error 1 </td>
+                  <td width="50%"> <%= result.arr[0].value %> </td>
+                </tr>
+
+              </tbody>
+            <% } %>
+          </table>
+          <br> <br>
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" width="100%">
+            <!-- No Error -->
+            <h1 class="has-text-centered modbusHeader"> Inputs </h1> <br>
+              <thead>
+                <tr class="is-size-5">
+                  <th width="25%">Variable Type</th>
+                  <th width="25%">Value</th>
+                  <th width="25%">Variable Type</th>
+                  <th width="25%">Value</th>
+                </tr>
+              </thead>
+              <tbody class="list is-size-5">
+                <tr>
+                  <% if(input.comPort) {  %>
+                      <td> Com Port </td>
+                      <td> <%= input.comPort %> </td>
+                  <% } %>
+                  <% if(input.unitAdd) {  %>
+                      <td> Unit Address </td>
+                      <td> <%= input.unitAdd %> </td>
+                  <% } %>
+                </tr>
+                <tr>
+                  <% if(input.startReg) {  %>
+                      <td> Start Register </td>
+                      <td> <%= input.startReg %> </td>
+                  <% } %>
+                  <% if(input.numReg) {  %>
+                      <td> Number of Registers </td>
+                      <td> <%= input.numReg %> </td>
+                  <% } %>
+                </tr>
+                <tr>
+                  <% if(input.dataType) { %>
+                      <td> Data Type </td>
+                      <td> <%= input.dataType %> </td>
+                  <% } %>
+                  <% if(input.parity == 0) {  %>
+                      <td> Parity </td>
+                      <td> None (0) </td>
+                  <% } else if(input.parity == 1) {%>
+                      <td> Parity </td>
+                      <td> Odd (1) </td>
+                  <% } else { %>
+                      <td> Parity </td>
+                      <td> Even (2) </td>
+                  <% } %>
+                </tr>
+                <tr>
+                  <% if(input.code < 9) {  %>
+                      <td> Function Code </td>
+                      <td> FC0<%= input.code %> </td>
+                  <% } else { %>
+                      <td> Function Code </td>
+                      <td> FC<%= input.code %> </td>
+                  <% } %>
+                  <% if(input.speed) {  %>
+                      <td> Baud Rate </td>
+                      <td> <%= input.speed %> </td>
+                  <% } %>
+                </tr>
+                <tr>
+                  <% if(input.sign == 'u') {  %>
+                      <td> Signed/Unsigned </td>
+                      <td> Unsigned </td>
+                  <% } else { %>
+                      <td> Signed/Unsigned </td>
+                      <td> Signed </td>
+                  <% } %>
+                  <% if(input.bit == 16) {  %>
+                      <td> Number of Bits </td>
+                      <td> 16 bits </td>
+                  <% } else { %>
+                      <td> Number of Bits </td>
+                      <td> 32 bits </td>
+                  <% } %>
+                </tr>
+              </tbody>
+          </table>
+          <br> <br> <br>
+      </section>
+    </main>
+    <footer class="footerColor">
+      <br>
+      <% include partials/footer %>
+      <br>
+    </footer>
+  </html>

@@ -1,0 +1,142 @@
+html,body {
+  background: #EFF3F4;
+  font-family: 'Open Sans', serif;
+}
+
+.table__wrapper {
+  overflow-x: auto;
+}
+
+/* @font-face {
+    font-family: 'digital';
+    src: url('enhanced_led_board-7.ttf');
+} */
+
+@font-face {
+    font-family: 'digital';
+    src: url('cristal.ttf');
+}
+
+@font-face {
+    font-family: 'digital1';
+    src: url('a.ttf');
+}
+
+@font-face {
+    font-family: 'digital2';
+    src: url('a1.ttf');
+}
+
+@font-face {
+    font-family: 'digital2';
+    src: url('a1.ttf');
+}
+
+body {
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+}
+
+main {
+flex: 1 0 auto;
+font-size: 20px;
+}
+
+a {
+color: #388e3c;
+}
+
+a:link {
+color: #388e3c;
+}
+a:visited {
+color: #388e3c;
+}
+a:hover {
+color: #81c784;
+}
+
+div#my_container a {
+color: #388e3c;
+}
+
+p.my_class a {
+color: #388e3c;
+}
+
+ul.my_list a {
+color: #388e3c;
+}
+
+/*  Misc */
+
+.greenIcon {
+  color: #388e3c;
+}
+
+.headerText{
+  color: #195d27 !important;
+}
+
+.headerSmall{
+  color: #195d27 !important;
+}
+
+.modbusHeader{
+  color: #195d27 !important;
+  font-size: 25px;
+}
+
+.footerColor{
+  background-color: #e0e0e0;
+}
+
+.vortekLogo{
+	max-width: 15%;
+	height: auto;
+	width: auto\9; /* IE8 */
+  margin: 0 auto;
+  padding-bottom: 6px;
+  width: 80em;
+}
+
+li {
+    float: left;
+    justify-content: center;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination li.active{
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+/*  Form  */
+.formPadding{
+  padding-left:150;
+  padding-right:150px;
+}

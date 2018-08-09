@@ -1,0 +1,21 @@
+0 Volume Total
+1 Mass Total
+2 Forward Energy Total
+3 Reverse Energy Total
+4 Write CFG Data
+5 Write Cal Data
+6 Write Fact Data
+7 Clear Exception Status
+8 Reset Meter
+9 Reset Totals
+10 Clear Config Changed
+11 Clear System Log
+12 Clear Alarm Log
+13 Clear Max Values
+14 Init Variables
+15 Set Defaults
+16 Fix Current 1
+17 Fix Current 2
+18 Fix Current 3
+19 Fix Current 4
+20 Key Press

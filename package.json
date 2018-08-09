@@ -1,0 +1,29 @@
+{
+  "name": "vortekRTU",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^4.1.0",
+    "rimraf": "^2.6.1"
+  },
+  "scripts": {
+    "install": "cd cpp/modbus && node-gyp configure && node-gyp build",
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output public/css/bulma.css public/css/bulma.css",
+    "build-clean": "rimraf css",
+    "build-sass": "node-sass --output-style expanded --source-map true sass/custom-bulma.sass public/css/bulma.css",
+    "start": "npm run build-sass -- --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bulma": "^0.6.2",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "modbus-rtu": "^0.2.1",
+    "modbus-serial": "^7.3.0",
+    "moment": "^2.22.2",
+    "qz-modbus-serial": "^4.5.7",
+    "serialport": "^6.2.1",
+    "sprintf-js": "^1.1.1"
+  }
+}

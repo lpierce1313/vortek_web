@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <% include partials/head %>
+</head>
+
+<main>
+  <section class="hero is-primary is-medium">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                  Vortek Instruments
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                  <span></span>
+            <span></span>
+            <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item" href="/modbus">
+                Modbus
+              </a>
+              <a class="navbar-item" href="/control_panel">
+                Control Panel
+              </a>
+              <a class="navbar-item is-active" href="/directory">
+                Directory
+              </a>
+              <a class="navbar-item" href="/help">
+                Help
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+  <br> <br>
+  <h1 class="title has-text-centered headerText"> Register Directory </h1>
+  <br>
+  <section class="container">
+
+    <div id="register">
+      <div id="listId">
+        <div class="columns">
+          <div class="column is-one-quarter">
+
+
+            <div class="is-hidden-mobile">
+              <div class="dropdown is-hoverable">
+                 <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+                    <span>Directory Selection</span>
+                    <span class="icon is-small">
+                    <i class="fas fa-angle-down greenIcon" aria-hidden="true"></i>
+                    </span>
+                    </button>
+                 </div>
+                 <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                    <div class="dropdown-content">
+                       <div class="dropdown-item">
+                          <a href="/directory"> Register Directory</a>
+                       </div>
+                       <hr class="dropdown-divider">
+                       <div class="dropdown-item">
+                          <a href="/directory_coil"> Coil Directory </a>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <br> <br>
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input class="input search" type="text" placeholder="Search here...">
+                  <span class="icon is-left">
+                        <i class="fas fa-search"></i>
+                      </span>
+                </p>
+                <br>
+              </div>
+            </div>
+            <div class="is-hidden-tablet">
+              <div class="has-text-centered" style="padding-left:10px; padding-right:10px;">
+                <div class="dropdown is-hoverable">
+                   <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+                      <span>Directory Selection</span>
+                      <span class="icon is-small">
+                      <i class="fas fa-angle-down greenIcon" aria-hidden="true"></i>
+                      </span>
+                      </button>
+                   </div>
+                   <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                      <div class="dropdown-content">
+                         <div class="dropdown-item">
+                            <a href="/directory"> Register Directory</a>
+                         </div>
+                         <hr class="dropdown-divider">
+                         <div class="dropdown-item">
+                            <a href="/directory_coil"> Coil Directory </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <br> <br>
+                <div class="field">
+                  <p class="control has-icons-left">
+                    <input class="input search" type="text" placeholder="Search here...">
+                    <span class="icon is-left">
+                          <i class="fas fa-search"></i>
+                    </span>
+                  </p>
+                  <br>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="table__wrapper">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" width="100%">
+            <thead>
+              <tr class="is-size-5">
+                <th>Register Label</th>
+                <th>Register Address</th>
+                <th>Type</th>
+                <th>Read/Write</th>
+              </tr>
+            </thead>
+            <tbody class="list is-size-5">
+              <% data.forEach(function(val) { %>
+                <tr>
+                  <td class="regLabel">
+                    <%= val.value %>
+                  </td>
+                  <td class="regAdd">
+                    <%= val.key %>
+                  </td>
+                  <td class="type">
+                    <%= val.type %>
+                  </td>
+                  <td class="rw">
+                    <%= val.rw %>
+                  </td>
+                </tr>
+                <% }); %>
+            </tbody>
+          </table>
+        </div>
+        <ul class="paginationBottom pagination"> </ul>
+      </div>
+      <script>
+        var listOptions = {
+          valueNames: ['regAdd', 'regLabel', "type", "rw"],
+          page: 35,
+          pagination: [{
+            paginationClass: "paginationBottom",
+            outerWindow: 8,
+          }]
+        };
+        var listObj = new List('listId', listOptions);
+      </script>
+    </div>
+
+
+  </section>
+  <br> <br>
+</main>
+<footer class="footerColor">
+  <br>
+  <% include partials/footer %>
+  <br>
+</footer>
+</html>
