@@ -14,22 +14,7 @@ html,body {
 
 @font-face {
     font-family: 'digital';
-    src: url('cristal.ttf');
-}
-
-@font-face {
-    font-family: 'digital1';
-    src: url('a.ttf');
-}
-
-@font-face {
-    font-family: 'digital2';
-    src: url('a1.ttf');
-}
-
-@font-face {
-    font-family: 'digital2';
-    src: url('a1.ttf');
+    src: url('nisystem.ttf');
 }
 
 body {
